@@ -90,7 +90,7 @@
 
 .painting-img-wrapper {
   position: relative;
-  cursor: crosshair;
+  cursor: none;
   display: inline-block;
   line-height: 0;
 }

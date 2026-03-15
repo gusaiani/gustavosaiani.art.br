@@ -4,7 +4,7 @@ import images from "./data/images";
 
 const S3_BASE = "https://s3-sa-east-1.amazonaws.com/gustavosaiani.com";
 const ZOOM = 2.5;
-const LENS_SIZE = 200;
+const LENS_SIZE = 320;
 
 function PaintingPage() {
   const { slug } = useParams();
