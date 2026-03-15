@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <h1>Gustavo Saiani</h1>
-      <a href="mailto:gustavo@poe.ma">gustavo@poe.ma</a>
+      <a href="mailto:gs@gustavosaiani.com">gs@gustavosaiani.com</a>
       <header className="App-header">
         {images.data
           .filter(image => image.visible)
