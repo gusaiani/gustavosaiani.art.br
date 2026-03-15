@@ -1,40 +1,19 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import images from "./data/images";
-
-console.log(images);
+import Gallery from "./Gallery";
+import PaintingPage from "./PaintingPage";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Gustavo Saiani</h1>
-      <a href="mailto:gs@gustavosaiani.com">gs@gustavosaiani.com</a>
-      <header className="App-header">
-        {images.data
-          .filter(image => image.visible)
-          .map((image, index) => (
-            <div style={{ marginBottom: "60px" }}>
-              <img
-                alt={image.name}
-                id={image.slug}
-                src={`https://s3-sa-east-1.amazonaws.com/gustavosaiani.com/large/${
-                  image.filename
-                }`}
-                loading={index > 1 ? "lazy" : ""}
-              />
-              <div>
-                <p>
-                  <b>{image.name}</b>, {image.date}
-                </p>
-                <p>{image.material}</p>
-                <p>
-                  {image.height} × {image.width}cm
-                </p>
-              </div>
-            </div>
-          ))}
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path="/" component={Gallery} />
+          <Route path="/work/:slug" component={PaintingPage} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
