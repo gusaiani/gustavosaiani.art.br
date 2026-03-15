@@ -26,6 +26,7 @@ function Gallery() {
               <img
                 alt={image.name}
                 src={`${S3_BASE}/thumbnails/${image.filename}`}
+                onError={e => { e.target.onerror = null; e.target.src = `${S3_BASE}/large/${image.filename}`; }}
                 loading="lazy"
               />
             </div>
