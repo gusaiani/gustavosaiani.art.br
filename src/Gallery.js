@@ -4,11 +4,17 @@ import images from "./data/images";
 
 const S3_BASE = "https://s3-sa-east-1.amazonaws.com/gustavosaiani.com";
 
-const NO_THUMBNAIL = ["gustavo-saiani-esta.jpg"];
-
 const visibleImages = images.data
   .filter(image => image.visible)
   .sort((a, b) => a.position - b.position);
+
+function thumbSrc(filename) {
+  return `${S3_BASE}/thumbnails/${filename}`;
+}
+
+function largeSrc(filename) {
+  return `${S3_BASE}/large/${filename}`;
+}
 
 function Gallery() {
   return (
@@ -27,7 +33,8 @@ function Gallery() {
             <div className="gallery-item-img-wrapper">
               <img
                 alt={image.name}
-                src={`${S3_BASE}/${NO_THUMBNAIL.includes(image.filename) ? "large" : "thumbnails"}/${image.filename}`}
+                src={thumbSrc(image.filename)}
+                onError={e => { e.target.onerror = null; e.target.src = largeSrc(image.filename); }}
                 loading="lazy"
               />
             </div>
