@@ -1,15 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
- font-family:  Garamond, Georgia, Cambria, serif, ui-serif, "Times New Roman", Times;
- margin: 0;
+  font-family: Garamond, Georgia, Cambria, serif, ui-serif, "Times New Roman", Times;
+  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #333;
 }
 
 a {
-  color: black;
-  display: block;
-  font-size: 14px;
-  padding: 10px 0 100px;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -17,29 +19,7 @@ a:hover {
   text-decoration: underline;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-h1 {
-  font-size: 24px;
-  font-weight: 400;
-  margin: 20px 0 0;
-}
-
-img {
-  height: auto;
-  margin-bottom: 24px;
-  max-height: calc(100vh - 140px);
-  max-width: 100vw;
-}
-
 p {
-  font-size: 18px;
-  margin: 0 0 10px;
-}
-
-p + img {
-  margin-top: 240px;
+  font-size: 16px;
+  margin: 0 0 6px;
 }
