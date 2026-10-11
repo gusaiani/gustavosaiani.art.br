@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import images from "./data/images";
 
@@ -41,6 +41,10 @@ function PaintingPage() {
   const handleMouseLeave = useCallback(() => {
     setLens(prev => ({ ...prev, active: false }));
   }, []);
+
+  useEffect(() => {
+    document.title = image ? `${image.name} · Gustavo Saiani` : "Gustavo Saiani";
+  }, [image]);
 
   if (!image) {
     return (

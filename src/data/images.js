@@ -183,7 +183,7 @@ const images = {
       wasSold: false
     },
     {
-      filename: "gustavo-saiani-sol-2025.jpg ",
+      filename: "gustavo-saiani-sol-2025.jpg",
       name: "Sol 2025",
       slug: "sol-2025",
       date: 2025,
