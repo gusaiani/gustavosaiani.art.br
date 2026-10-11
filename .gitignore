@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# og image sources (downloaded by scripts/og-images.js)
+/.cache

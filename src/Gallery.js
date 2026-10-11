@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import images from "./data/images";
 
@@ -9,6 +9,10 @@ const visibleImages = images.data
   .sort((a, b) => a.position - b.position);
 
 function Gallery() {
+  useEffect(() => {
+    document.title = "Gustavo Saiani";
+  }, []);
+
   return (
     <div className="gallery">
       <header className="gallery-header">
